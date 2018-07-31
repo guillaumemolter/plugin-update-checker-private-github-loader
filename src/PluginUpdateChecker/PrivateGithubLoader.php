@@ -1,10 +1,10 @@
 <?php
-namespace GuillaumeMolter\PluginUpdaterAdmin;
+namespace GuillaumeMolter\PluginUpdateChecker;
 
 /**
  * PrivateGithubSetup Class.
  */
-class PrivateGithubSetup {
+class PrivateGithubLoader {
 
     /**
      * The Github Token to fetch private repo data.
@@ -61,7 +61,7 @@ class PrivateGithubSetup {
                 $updater->setBranch( $this->github_branch );
 
             } catch ( Exception $e ) {
-                echo 'PluginUpdaterAdmin caught an exception: ' .  $e->getMessage() . "\n";
+                echo 'PluginUpdateChecker caught an exception: ' .  $e->getMessage() . "\n";
             }
         }
     }
