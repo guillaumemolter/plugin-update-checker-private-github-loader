@@ -1,0 +1,25 @@
+{
+    "name": "guillaumemolter/plugin-update-checker-private-github-loader",
+    "description": "Helper to configure https://github.com/YahnisElsts/plugin-update-checker for Github private repo.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [ {
+        "name": "Guillaume Molter",
+        "email": "guillaume.molter@gmail.com"
+    } ],
+    "keywords": [
+        "wordpress", "composer", "wp", "plugin", "theme", "update", "git", "github", "updater"
+    ],
+    "require": {
+        "php": ">=7.0",
+        "yahnis-elsts/plugin-update-checker": "^4.4"
+    },
+    "require-dev": {
+        "composer/composer": "1.0.*"
+    },
+    "autoload": {
+        "psr-4": { 
+            "GuillaumeMolter\\ACFAsLibrary\\": "src/PluginUpdaterAdmin" 
+        }
+    }
+}
