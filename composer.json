@@ -14,11 +14,12 @@
         "yahnis-elsts/plugin-update-checker": "^4.4"
     },
     "require-dev": {
-        "composer/composer": "1.0.*"
+        "composer/composer": "1.0.*",
+        "squizlabs/php_codesniffer": "3.*"
     },
     "autoload": {
-        "psr-4": { 
-            "GuillaumeMolter\\PluginUpdateChecker\\": "src/PluginUpdateChecker" 
+        "psr-4": {
+            "GuillaumeMolter\\PluginUpdateChecker\\": "src/PluginUpdateChecker"
         }
     }
 }
