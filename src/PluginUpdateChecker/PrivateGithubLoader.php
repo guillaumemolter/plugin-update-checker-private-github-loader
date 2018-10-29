@@ -63,7 +63,8 @@ class PrivateGithubLoader
             && ! empty($this->github_branch)
         ) {
             try {
-                $updater = Puc_v4_Factory::buildUpdateChecker(
+                require __DIR__ . '/../../../../yahnis-elsts/plugin-update-checker/plugin-update-checker.php';
+                $updater = \Puc_v4_Factory::buildUpdateChecker(
                     'https://github.com/' . $this->github_user . '/' . $this->github_repo,
                     __FILE__,
                     $this->github_repo
