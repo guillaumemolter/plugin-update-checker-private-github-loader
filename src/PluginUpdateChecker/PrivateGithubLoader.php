@@ -42,12 +42,14 @@ class PrivateGithubLoader
         string $github_user,
         string $github_repo,
         string $github_token,
-        string $github_branch = 'master'
+        string $github_branch = 'master',
+        string $refenrence_file = __FILE__
     ) {
-        $this->github_user   = $github_user;
-        $this->github_repo   = $github_repo;
-        $this->github_token  = $github_token;
-        $this->github_branch = $github_branch;
+        $this->github_user     = $github_user;
+        $this->github_repo     = $github_repo;
+        $this->github_token    = $github_token;
+        $this->github_branch   = $github_branch;
+        $this->refenrence_file = $refenrence_file;
     }
 
     /**
@@ -61,12 +63,13 @@ class PrivateGithubLoader
             && ! empty($this->github_user)
             && ! empty($this->github_repo)
             && ! empty($this->github_branch)
+            && ! empty($this->refenrence_file)
         ) {
             try {
                 require __DIR__ . '/../../../../yahnis-elsts/plugin-update-checker/plugin-update-checker.php';
                 $updater = \Puc_v4_Factory::buildUpdateChecker(
                     'https://github.com/' . $this->github_user . '/' . $this->github_repo,
-                    __FILE__,
+                    $this->refenrence_file,
                     $this->github_repo
                 );
                 $updater->setAuthentication($this->github_token);
